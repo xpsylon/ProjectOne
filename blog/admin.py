@@ -1,3 +1,5 @@
 from django.contrib import admin
-
-# Register your models here.
+#importamos la clase Post de models:
+from .models import Post
+#y creamos una interface para manejar post en la admin site
+admin.site.register(Post)
