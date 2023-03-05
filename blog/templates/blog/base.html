@@ -49,8 +49,21 @@
     <main role="main" class="container">
       <div class="row">
         <div class="col-md-8">
+        <!--Messages que pueden aparecer en cualquier template
+        Within this section, it checks if there are any messages to display to the user, using the messages framework
+        provided by Django. If there are messages, it iterates over them and renders each message as an alert with a 
+        corresponding Bootstrap alert style, based on the message's tags.
+        Overall, this code provides a basic structure for the main content area of a website that can be extended by 
+        child templates that inherit from it. It also allows for the display of user feedback messages using Django's 
+        messages framework.-->
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+              </div> <!--Grupo (tags) de mensajes de alerta con su tipo de clase-->
+             {% endfor %}
+          {% endif %}
 <!--=======================FIN PARTE HEREDADA================================================-->
-
 <!--=======================PARTE UNICA DE CADA TEMPLATE===========================-->
           {% block content %}{% endblock %}
 <!--=======================FIN PARTE UNICA========================================-->

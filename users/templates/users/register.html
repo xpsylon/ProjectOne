@@ -1,11 +1,11 @@
 {% extends "blog/base.html" %} <!--Toda la estructura es de blog/base.html menos el block content-->
 {% block content %} <!--Parte unica del template-->
     <div class="content-section"><!--clase de blog/basic.css-->
-        <form method="post">
+        <form method="POST">
             {% csrf_token %} <!--Metodo obligatorio de seguridad de Django-->
                 <fieldset class="form-group"> <!--clase de Bootstrap-->
                     <legend class="border-bottom mb-4">Join Today</legend><!--clase de Bootstrap-->
-                    {{ form }} <!--Instancia clase UserCreationForm-->
+                    {{ form.as_p }} <!--Instancia clase UserCreationForm. as_p es un method  para ordenar el formulario-->
                 </fieldset>
                 <div class="form-group"><!--clase de Bootstrap-->
                     <button class="btn btn-outline-info" type="submit">Sign Up</button>
