@@ -36,8 +36,13 @@
               </div>
               <!-- Navbar Right Side -->
               <div class="navbar-nav">
-                <a class="nav-item nav-link" href="#">Login</a>
-                <a class="nav-item nav-link" href="#">Register</a>
+                {% if user.is_authenticated %} <!--boolean atribute in djangos 'user' module-->
+                  <a class="nav-item nav-link" href="{%  url 'perfil' %}">Profile</a>
+                  <a class="nav-item nav-link" href="{%  url 'salir' %}">Logout</a>
+                {% else %}
+                  <a class="nav-item nav-link" href="{%  url 'entrar' %}">Login</a>
+                  <a class="nav-item nav-link" href="{%  url 'alta' %}">Register</a>
+                {% endif %}
               </div>
             </div>
           </div>

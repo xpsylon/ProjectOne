@@ -1,0 +1,5 @@
+{% extends "blog/base.html" %} <!--Toda la estructura es de blog/base.html menos el block content-->
+{% load crispy_forms_tags %} <!--loading crispy forms, third party django app.-->
+{% block content %} <!--Parte unica del template-->
+    <h2>{{ user.username }}</h2> <!--Django built ins-->
+{% endblock content %}

@@ -130,3 +130,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+
+LOGIN_REDIRECT_URL = 'blog-home'
+#la default es /accounts/profile. Aca le damos el name de la home del blog
+
+LOGIN_URL = 'entrar'
+#la default es /accounts/login

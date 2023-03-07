@@ -5,19 +5,19 @@
         <form method="POST">
             {% csrf_token %} <!--Metodo obligatorio de seguridad de Django-->
                 <fieldset class="form-group"> <!--clase de Bootstrap-->
-                    <legend class="border-bottom mb-4">Join Today</legend><!--clase de Bootstrap-->
+                    <legend class="border-bottom mb-4">Log In</legend><!--clase de Bootstrap-->
                     <!--{{ form.as_p }} REEMPLAZADA! Instancia clase UserCreationForm. as_p es un method  
                     para ordenar el formulario-->
                     <!--Ahora  usamos crispy forms como filtro:-->
                     {{ form|crispy }}
                 </fieldset>
                 <div class="form-group"><!--clase de Bootstrap-->
-                    <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                    <button class="btn btn-outline-info" type="submit">Login</button>
                 </div>
         </form>
         <div class="border-top pt-3"></div>
         <small class="text-muted">
-            Already Have An Account? <a class="ml-2" href="{% url 'entrar' %}">Sign In</a>
+            Don't have an Account yet?<a class="ml-2" href="{% url 'alta' %}">Sign Up Now!</a> <!--link dinamico-->
         </small>
     </div>
 {% endblock content %}
