@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect #render incluye el protocolo HTTP. Es una abreviacion del mismo.
 #redirect es una funcion para redirigir al  usuario a la pagina que querramos una vez que haya enviado el formulario.
 #importamos formulario para darse de alta:
-#from django.contrib.auth.forms import UserCreationForm. REEMPLAZADA por UserRegisterForm.
+#from django.contrib.auth.forms import UserCreationForm. REEMPLAZADA por UserRegisterForm, ya que en forms.py se creo la 
+#clase heredada UserRegisterForm.
 from django.contrib import messages
 from .forms import UserRegisterForm
 from django.contrib.auth.decorators import login_required
