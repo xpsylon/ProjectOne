@@ -9,17 +9,17 @@ from django.contrib.auth.decorators import login_required
 
 def register(request):
     if request.method == 'POST':
-        #form = UserCreationForm(request.POST) #instancia de la clase formulario. REEMPLAZADA!
-        form = UserRegisterForm(request.POST)
-        if form.is_valid():
-             form.save()#metodo de Django para guardar la data del diccionario en la database.
-             username = form.cleaned_data.get('username')
+        #formulario = UserCreationForm(request.POST) #instancia de la clase formulario. REEMPLAZADA!
+        formulario = UserRegisterForm(request.POST)
+        if formulario.is_valid():
+             formulario.save()#metodo de Django para guardar la data del diccionario en la database.
+             username = formulario.cleaned_data.get('username')
              messages.success(request, f'Acount created for {username}!')
              return redirect('entrar') #name del template del login
     else:
-        #form = UserCreationForm() #instancia de la clase. REEMPLAZADA!
-        form =  UserRegisterForm()
-    return render(request, 'users/register.html', {'form': form}) #arg: request, template, context
+        #formulario = UserCreationForm() #instancia de la clase. REEMPLAZADA!
+        formulario =  UserRegisterForm()
+    return render(request, 'users/register.html', {'form_clave': formulario}) #arg: request, template, context
 
 #metodo para el profile usando login_required como decorador:
 @login_required
