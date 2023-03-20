@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}"><!--static gets the absolute url of main.css-->
     
-    {% if title %} <!--Si hay una variable title en views.py-->
-        <title>Django Blog - {{ title }}</title> <!--esta view va a tener titulo-->
+    {% if titulo %} <!--Si hay una variable title en views.py-->
+        <title>Django Blog - {{ titulo }}</title> <!--esta view va a tener titulo-->
     {% else %}
         <title>Sin titulo</title>
     {% endif %}
