@@ -11,7 +11,7 @@ def register(request):
     if request.method == 'POST':
         #formulario = UserCreationForm(request.POST) #instancia de la clase formulario. REEMPLAZADA!
         formulario = UserRegisterForm(request.POST)
-        if formulario.is_valid():
+        if formulario.is_valid(): 
              formulario.save()#metodo de Django para guardar la data del diccionario en la database.
              username = formulario.cleaned_data.get('username')
              messages.success(request, f'Acount created for {username}!')

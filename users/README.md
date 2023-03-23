@@ -7,6 +7,8 @@
    1. from django.contrib.auth.forms import UserCreationForm
    2. def register(request):
          formulario = UserCreationForm() <!--instancia de la clase-->
+         if request.method == 'POST'
+         
 4. Create template: users/register.html
    1. {% extends "blog/base.html %}
    2. {% block content %} add div and form html tags and css classes {% endblock content %}
