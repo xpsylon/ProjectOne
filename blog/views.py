@@ -5,7 +5,7 @@ from .models import Post
 
 def home(request):
     #en vez de lo de arriba, le pasamos la data de la clase Post guardada en la database:
-    context = {'posts': Post.objects.all(), 'titulo': 'Main Page'} 
+    context = {'posts': Post.objects.all(), 'titulo': 'Posteos del Blog'} 
     return render(request, 'blog/home.html', context)
    
 def about(request):
